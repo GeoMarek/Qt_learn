@@ -1,8 +1,9 @@
 #ifndef RENDERAREA_H
 #define RENDERAREA_H
-
+#define _USE_MATH_DEFINES
 #include <QWidget>
 #include <QColor>
+#include "math.h"
 
 class RenderArea : public QWidget
 {
@@ -24,10 +25,21 @@ public:
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 private:
+    void on_shape_changed();
+    QPointF compute(float t);
+    QPointF compute_astroid(float t);
+    QPointF compute_cycloid(float t);
+    QPointF compute_huygens_cycloid(float t);
+    QPointF compute_hypo_cycloid(float t);
+
+private:
     QColor background_color;
     QColor shape_color;
     ShapeType shape;
 
+    float interval_length;
+    float scale;
+    int step_count;
 
 signals:
 

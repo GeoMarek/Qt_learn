@@ -14,25 +14,28 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_button_astroid_clicked()
 {
-    this->ui->render_area->setBackgroundColor(Qt::red);
+    this->ui->render_area->setShape(RenderArea::ShapeType::Astroid);
+    //this->ui->render_area->setBackgroundColor(Qt::red);
     this->ui->render_area->repaint();
 }
 
 void MainWindow::on_button_cycloid_clicked()
 {
-    this->ui->render_area->setBackgroundColor(Qt::green);
     this->ui->render_area->setShape(RenderArea::ShapeType::Cycloid);
+    //this->ui->render_area->setBackgroundColor(Qt::green);
     this->ui->render_area->repaint();
 }
 
 void MainWindow::on_button_huygens_cycloid_clicked()
 {
-    this->ui->render_area->setBackgroundColor(Qt::blue);
+    this->ui->render_area->setShape(RenderArea::ShapeType::HuygensCyclodid);
+    //this->ui->render_area->setBackgroundColor(Qt::blue);
     this->ui->render_area->repaint();
 }
 
 void MainWindow::on_button_hypo_cycloid_clicked()
 {
-    this->ui->render_area->setBackgroundColor(Qt::yellow);
+    this->ui->render_area->setShape(RenderArea::ShapeType::HypoCycloid);
+    //this->ui->render_area->setBackgroundColor(Qt::yellow);
     this->ui->render_area->repaint();
 }
