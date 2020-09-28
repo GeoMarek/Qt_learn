@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>363</width>
-    <height>223</height>
+    <width>402</width>
+    <height>281</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,66 +17,156 @@
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>230</x>
       <y>10</y>
-      <width>331</width>
-      <height>181</height>
+      <width>161</width>
+      <height>241</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="button_astroid">
+       <property name="text">
+        <string>Astroid</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_cycloid">
+       <property name="text">
+        <string>Cycloid</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_huygens_cycloid">
+       <property name="text">
+        <string>Huygens Cycloid</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_hypo_cycloid">
+       <property name="text">
+        <string>Hypo Cycloid</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_line">
+       <property name="text">
+        <string>Line</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="RenderArea" name="render_area" native="true"/>
+        <widget class="QLabel" name="label_scale">
+         <property name="text">
+          <string>Scale</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="spin_scale">
+         <property name="decimals">
+          <number>1</number>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="button_astroid">
+        <widget class="QLabel" name="label_interval">
          <property name="text">
-          <string>Astroid</string>
+          <string>Interval Lentgh</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="button_cycloid">
+        <widget class="QDoubleSpinBox" name="spin_interval">
+         <property name="decimals">
+          <number>2</number>
+         </property>
+         <property name="singleStep">
+          <double>0.100000000000000</double>
+         </property>
+         <property name="stepType">
+          <enum>QAbstractSpinBox::DefaultStepType</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>Cycloid</string>
+          <string>Step Count</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="button_huygens_cycloid">
+        <widget class="QSpinBox" name="spin_step_count"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>216</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="RenderArea" name="render_area" native="true"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QPushButton" name="button_background">
          <property name="text">
-          <string>Huygens Cycloid</string>
+          <string>Background</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="button_hypo_cycloid">
+        <widget class="QPushButton" name="button_line_color">
          <property name="text">
-          <string>Hypo Cycloid</string>
+          <string>Line Color</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="button_line">
-         <property name="text">
-          <string>Line</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
+        <spacer name="horizontalSpacer">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>20</width>
-           <height>40</height>
+           <width>40</width>
+           <height>20</height>
           </size>
          </property>
         </spacer>

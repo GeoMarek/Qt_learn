@@ -22,6 +22,16 @@ private slots:
     void on_button_hypo_cycloid_clicked();
     void on_button_line_clicked();
 
+    void update_ui();
+
+    void on_spin_scale_valueChanged(double scale);
+    void on_spin_interval_valueChanged(double interval);
+    void on_spin_step_count_valueChanged(int count);
+
+    void on_button_background_clicked();
+
+    void on_button_line_color_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

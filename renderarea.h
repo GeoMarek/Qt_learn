@@ -11,6 +11,7 @@ public:
     explicit RenderArea(QWidget *parent = nullptr);
     QSize minimumSizeHint() const Q_DECL_OVERRIDE;
     QSize sizeHint() const Q_DECL_OVERRIDE;
+
     enum class ShapeType{
         Astroid,
         Cycloid,
@@ -18,10 +19,21 @@ public:
         HypoCycloid,
         Line
     };
+
+
     void setBackgroundColor(QColor color) { background_color = color; }
-    QColor getBackgroundColor() const { return background_color; }
     void setShape(ShapeType shape);
+    void setScale(float scale);
+    void setInterval(float interval);
+    void setStepCount(int count);
+    void setShapeColor(QColor color);
+
+    QColor getBackgroundColor() const { return background_color; }
     ShapeType getShape() const;
+    float getScale() const;
+    float getInterval() const;
+    int getStepCount() const;
+    QColor getShapeColor() const;
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
@@ -33,6 +45,7 @@ private:
     QPointF compute_huygens_cycloid(float t);
     QPointF compute_hypo_cycloid(float t);
     QPointF compute_line(float t);
+
 
 
 private:

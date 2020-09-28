@@ -11,7 +11,7 @@ RenderArea::RenderArea(QWidget *parent) :
 
 QSize RenderArea::minimumSizeHint() const
 {
-    return QSize(100, 100);
+    return QSize(400, 200);
 }
 
 QSize RenderArea::sizeHint() const
@@ -28,6 +28,50 @@ void RenderArea::setShape(ShapeType shape)
 RenderArea::ShapeType RenderArea::getShape() const
 {
     return shape;
+}
+
+void RenderArea::setScale(float scale)
+{
+    this->scale = scale;
+    repaint();
+}
+
+float RenderArea::getScale() const
+{
+    return scale;
+}
+
+void RenderArea::setInterval(float interval)
+{
+    this->interval_length = interval;
+    repaint();
+}
+
+void RenderArea::setStepCount(int count)
+{
+    this->step_count = count;
+    repaint();
+}
+
+void RenderArea::setShapeColor(QColor color)
+{
+    shape_color = color;
+    repaint();
+}
+
+float RenderArea::getInterval() const
+{
+    return interval_length;
+}
+
+int RenderArea::getStepCount() const
+{
+    return step_count;
+}
+
+QColor RenderArea::getShapeColor() const
+{
+    return shape_color;
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)
