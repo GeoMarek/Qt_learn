@@ -34,21 +34,30 @@ void RenderArea::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing, true);
 
+    painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setBrush(QBrush(background_color));
     painter.setPen(shape_color);
     painter.drawRect(this->rect());
 
-    auto center = this->rect().center();
+    QPoint center = this->rect().center();
     float step = interval_length / step_count;
+
+    QPointF prev_point = compute(0);
+    QPoint prev_pixel;
+    prev_pixel.setX(prev_point.x() * scale + center.x());
+    prev_pixel.setY(prev_point.y() * scale + center.y());
+
+
+
     for (float t=0; t < interval_length; t += step)
     {
         QPointF point = compute(t);
         QPoint pixel;
         pixel.setX(point.x() * scale + center.x());
         pixel.setY(point.y() * scale + center.y());
-        painter.drawPoint(pixel);
+        painter.drawLine(pixel, prev_pixel);
+        prev_pixel = pixel;
     }
 
 
