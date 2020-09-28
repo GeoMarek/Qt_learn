@@ -15,7 +15,8 @@ public:
         Astroid,
         Cycloid,
         HuygensCyclodid,
-        HypoCycloid
+        HypoCycloid,
+        Line
     };
     void setBackgroundColor(QColor color) { background_color = color; }
     QColor getBackgroundColor() const { return background_color; }
@@ -31,6 +32,8 @@ private:
     QPointF compute_cycloid(float t);
     QPointF compute_huygens_cycloid(float t);
     QPointF compute_hypo_cycloid(float t);
+    QPointF compute_line(float t);
+
 
 private:
     QColor background_color;

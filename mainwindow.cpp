@@ -39,3 +39,10 @@ void MainWindow::on_button_hypo_cycloid_clicked()
     //this->ui->render_area->setBackgroundColor(Qt::yellow);
     this->ui->render_area->repaint();
 }
+
+void MainWindow::on_button_line_clicked()
+{
+    this->ui->render_area->setShape(RenderArea::ShapeType::Line);
+    //this->ui->render_area->setBackgroundColor(Qt::yellow);
+    this->ui->render_area->repaint();
+}

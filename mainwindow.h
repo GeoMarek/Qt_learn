@@ -17,12 +17,10 @@ public:
 
 private slots:
     void on_button_astroid_clicked();
-
     void on_button_cycloid_clicked();
-
     void on_button_huygens_cycloid_clicked();
-
     void on_button_hypo_cycloid_clicked();
+    void on_button_line_clicked();
 
 private:
     Ui::MainWindow *ui;

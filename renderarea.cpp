@@ -78,6 +78,11 @@ void RenderArea::on_shape_changed()
         interval_length = 2 * M_PI;
         step_count = 256;
         break;
+    case ShapeType::Line:
+        scale = 100;
+        interval_length = 1;
+        step_count = 128;
+        break;
     default:
         break;
     }
@@ -98,6 +103,9 @@ QPointF RenderArea::compute(float t)
         break;
     case ShapeType::HypoCycloid:
         return compute_hypo_cycloid(t);
+        break;
+    case ShapeType::Line:
+        return compute_line(t);
         break;
     default:
         break;
@@ -131,4 +139,9 @@ QPointF RenderArea::compute_hypo_cycloid(float t)
     float x = 1.5 * (2 * cos(t) + cos(2*t));
     float y = 1.5 * (2 * sin(t) - sin(2*t));
     return QPointF(x, y);
+}
+
+QPointF RenderArea::compute_line(float t)
+{
+    return QPointF(1-t, 1-t);
 }
