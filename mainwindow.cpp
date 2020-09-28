@@ -87,3 +87,31 @@ void MainWindow::on_button_line_color_clicked()
     QColor color = QColorDialog::getColor(actual_color, this, "Select color");
     ui->render_area->setShapeColor(color);
 }
+
+void MainWindow::on_button_circle_clicked()
+{
+    this->ui->render_area->setShape(RenderArea::ShapeType::Circle);
+    this->ui->render_area->repaint();
+    update_ui();
+}
+
+void MainWindow::on_button_ellipse_clicked()
+{
+    this->ui->render_area->setShape(RenderArea::ShapeType::Ellipse);
+    this->ui->render_area->repaint();
+    update_ui();
+}
+
+void MainWindow::on_button_fancy_clicked()
+{
+    this->ui->render_area->setShape(RenderArea::ShapeType::Fancy);
+    this->ui->render_area->repaint();
+    update_ui();
+}
+
+void MainWindow::on_button_starfish_clicked()
+{
+    this->ui->render_area->setShape(RenderArea::ShapeType::StarFish);
+    this->ui->render_area->repaint();
+    update_ui();
+}

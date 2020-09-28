@@ -103,7 +103,12 @@ void RenderArea::paintEvent(QPaintEvent *event)
         painter.drawLine(pixel, prev_pixel);
         prev_pixel = pixel;
     }
-
+    QPointF point = compute(interval_length);
+    QPoint pixel;
+    pixel.setX(point.x() * scale + center.x());
+    pixel.setY(point.y() * scale + center.y());
+    painter.drawLine(pixel, prev_pixel);
+    prev_pixel = pixel;
 
 }
 
@@ -112,29 +117,49 @@ void RenderArea::on_shape_changed()
     switch (shape)
     {
     case ShapeType::Astroid:
-        scale = 40;
-        interval_length = 2 * M_PI;
+        scale = 90;
+        interval_length = static_cast<float>(2 * M_PI);
         step_count = 256;
         break;
     case ShapeType::Cycloid:
-        scale = 4;
-        interval_length = 6 * M_PI;
+        scale = 8;
+        interval_length = static_cast<float>(4 * M_PI);
         step_count = 128;
         break;
     case ShapeType::HuygensCyclodid:
         scale = 4;
-        interval_length = 4 * M_PI;
+        interval_length = static_cast<float>(4 * M_PI);
         step_count = 256;
         break;
     case ShapeType::HypoCycloid:
         scale = 15;
-        interval_length = 2 * M_PI;
+        interval_length = static_cast<float>(2 * M_PI);
         step_count = 256;
         break;
     case ShapeType::Line:
         scale = 100;
-        interval_length = 1;
+        interval_length = static_cast<float>(2);
         step_count = 128;
+        break;
+    case ShapeType::Circle:
+        scale = 100;
+        interval_length = static_cast<float>(2 * M_PI);
+        step_count = 128;
+        break;
+    case ShapeType::Ellipse:
+        scale = 50;
+        interval_length = static_cast<float>(2 * M_PI);
+        step_count = 256;
+        break;
+    case ShapeType::Fancy:
+        scale = 10;
+        interval_length = static_cast<float>(12 * M_PI);
+        step_count = 512;
+        break;
+    case ShapeType::StarFish:
+        scale = 25;
+        interval_length = static_cast<float>(6 * M_PI);
+        step_count = 256;
         break;
     default:
         break;
@@ -159,6 +184,18 @@ QPointF RenderArea::compute(float t)
         break;
     case ShapeType::Line:
         return compute_line(t);
+        break;
+    case ShapeType::Circle:
+        return compute_circle(t);
+        break;
+    case ShapeType::Ellipse:
+        return compute_ellipes(t);
+        break;
+    case ShapeType::Fancy:
+        return compute_fancy(t);
+        break;
+    case ShapeType::StarFish:
+        return compute_star_fish(t);
         break;
     default:
         break;
@@ -197,4 +234,31 @@ QPointF RenderArea::compute_hypo_cycloid(float t)
 QPointF RenderArea::compute_line(float t)
 {
     return QPointF(1-t, 1-t);
+}
+
+QPointF RenderArea::compute_circle(float t)
+{
+    return QPointF(cos(t), sin(t));
+}
+
+QPointF RenderArea::compute_ellipes(float t)
+{
+    return QPointF(2*cos(t), 1.1*sin(t));
+}
+
+QPointF RenderArea::compute_fancy(float t)
+{
+    auto x = 11.0f * cos(t) - 6 * cos((11.0f/6.0f) * t);
+    auto y = 11.0f * sin(t) - 6 * sin((11.0f/6.0f) * t);
+    return QPointF(x,y);
+}
+
+QPointF RenderArea::compute_star_fish(float t)
+{
+    auto R = 5;
+    auto r = 3;
+    auto d = 5;
+    auto x = (R-r) * cos(t) + d * cos(t*(R-r/r));
+    auto y = (R-r) * sin(t) - d * sin(t*(R-r/r));
+    return QPointF(x,y);
 }

@@ -32,6 +32,14 @@ private slots:
 
     void on_button_line_color_clicked();
 
+    void on_button_circle_clicked();
+
+    void on_button_ellipse_clicked();
+
+    void on_button_fancy_clicked();
+
+    void on_button_starfish_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

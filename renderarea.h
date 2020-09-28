@@ -17,7 +17,11 @@ public:
         Cycloid,
         HuygensCyclodid,
         HypoCycloid,
-        Line
+        Line,
+        Circle,
+        Ellipse,
+        Fancy,
+        StarFish
     };
 
 
@@ -45,6 +49,10 @@ private:
     QPointF compute_huygens_cycloid(float t);
     QPointF compute_hypo_cycloid(float t);
     QPointF compute_line(float t);
+    QPointF compute_circle(float t);
+    QPointF compute_ellipes(float t);
+    QPointF compute_fancy(float t);
+    QPointF compute_star_fish(float t);
 
 
 
