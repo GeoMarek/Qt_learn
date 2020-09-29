@@ -2,11 +2,12 @@
 #include <QPainter>
 RenderArea::RenderArea(QWidget *parent) :
     QWidget(parent),
-    background_color(0,0,255),
-    shape_color(255, 255, 255),
-    shape (ShapeType::Astroid)
+    background_color(Qt::black),
+    shape (ShapeType::Astroid),
+    pen(Qt::white)
 {
     on_shape_changed();
+    pen.setWidth(2);
 }
 
 QSize RenderArea::minimumSizeHint() const
@@ -55,7 +56,7 @@ void RenderArea::setStepCount(int count)
 
 void RenderArea::setShapeColor(QColor color)
 {
-    shape_color = color;
+    pen.setColor(color);
     repaint();
 }
 
@@ -71,7 +72,7 @@ int RenderArea::getStepCount() const
 
 QColor RenderArea::getShapeColor() const
 {
-    return shape_color;
+    return pen.color();
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)
@@ -81,7 +82,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
 
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setBrush(QBrush(background_color));
-    painter.setPen(shape_color);
+    painter.setPen(pen);
     painter.drawRect(this->rect());
 
     QPoint center = this->rect().center();
@@ -92,8 +93,6 @@ void RenderArea::paintEvent(QPaintEvent *event)
     prev_pixel.setX(prev_point.x() * scale + center.x());
     prev_pixel.setY(prev_point.y() * scale + center.y());
 
-
-
     for (float t=0; t < interval_length; t += step)
     {
         QPointF point = compute(t);
@@ -103,6 +102,7 @@ void RenderArea::paintEvent(QPaintEvent *event)
         painter.drawLine(pixel, prev_pixel);
         prev_pixel = pixel;
     }
+
     QPointF point = compute(interval_length);
     QPoint pixel;
     pixel.setX(point.x() * scale + center.x());
@@ -161,6 +161,16 @@ void RenderArea::on_shape_changed()
         interval_length = static_cast<float>(6 * M_PI);
         step_count = 256;
         break;
+    case ShapeType::Cloud:
+        scale = 10;
+        interval_length = static_cast<float>(28 * M_PI);
+        step_count = 128;
+        break;
+    case ShapeType::InvertedCloud:
+        scale = 10;
+        interval_length = static_cast<float>(28 * M_PI);
+        step_count = 128;
+        break;
     default:
         break;
     }
@@ -196,6 +206,12 @@ QPointF RenderArea::compute(float t)
         break;
     case ShapeType::StarFish:
         return compute_star_fish(t);
+        break;
+    case ShapeType::Cloud:
+        return compute_cloud(t);
+        break;
+    case ShapeType::InvertedCloud:
+        return compute_inverted_cloud(t);
         break;
     default:
         break;
@@ -260,5 +276,24 @@ QPointF RenderArea::compute_star_fish(float t)
     auto d = 5;
     auto x = (R-r) * cos(t) + d * cos(t*(R-r/r));
     auto y = (R-r) * sin(t) - d * sin(t*(R-r/r));
+    return QPointF(x,y);
+}
+
+QPointF RenderArea::compute_cloud(float t)
+{
+    return compute_cloud_with_sign(t,-1);
+}
+
+QPointF RenderArea::compute_inverted_cloud(float t)
+{
+    return compute_cloud_with_sign(t,1);
+}
+
+QPointF RenderArea::compute_cloud_with_sign(float t, float sign)
+{
+    auto a = 14;
+    auto b = 1;
+    auto x = (a+b) * cos (t*b/a) + sign * (b * cos (t*(a+b)/a));
+    auto y = (a+b) * sin (t*b/a) - b * sin (t*(a+b)/a);
     return QPointF(x,y);
 }

@@ -3,6 +3,7 @@
 #define _USE_MATH_DEFINES
 #include <QWidget>
 #include <QColor>
+#include <QPen>
 #include "math.h"
 
 class RenderArea : public QWidget
@@ -21,7 +22,9 @@ public:
         Circle,
         Ellipse,
         Fancy,
-        StarFish
+        StarFish,
+        Cloud,
+        InvertedCloud
     };
 
 
@@ -53,13 +56,16 @@ private:
     QPointF compute_ellipes(float t);
     QPointF compute_fancy(float t);
     QPointF compute_star_fish(float t);
+    QPointF compute_cloud(float t);
+    QPointF compute_inverted_cloud(float t);
+    QPointF compute_cloud_with_sign(float t, float sign);
 
 
 
 private:
     QColor background_color;
-    QColor shape_color;
     ShapeType shape;
+    QPen pen;
 
     float interval_length;
     float scale;

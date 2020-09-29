@@ -6,94 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>556</width>
-    <height>512</height>
+    <width>531</width>
+    <height>439</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="button_astroid">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>12</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Astroid</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="button_cycloid">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>39</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Cycloid</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="button_huygens_cycloid">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>66</y>
-      <width>87</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Huygens Cycloid</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="button_hypo_cycloid">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>93</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Hypo Cycloid</string>
-    </property>
-   </widget>
    <widget class="RenderArea" name="render_area" native="true">
     <property name="geometry">
      <rect>
       <x>11</x>
       <y>11</y>
-      <width>281</width>
-      <height>281</height>
+      <width>361</width>
+      <height>361</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="button_line">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>120</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Line</string>
     </property>
    </widget>
    <widget class="QPushButton" name="button_background">
     <property name="geometry">
      <rect>
       <x>12</x>
-      <y>410</y>
+      <y>380</y>
       <width>80</width>
       <height>21</height>
      </rect>
@@ -106,7 +41,7 @@
     <property name="geometry">
      <rect>
       <x>98</x>
-      <y>410</y>
+      <y>380</y>
       <width>80</width>
       <height>21</height>
      </rect>
@@ -115,179 +50,173 @@
      <string>Line Color</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>147</y>
-      <width>80</width>
-      <height>21</height>
+      <x>380</x>
+      <y>12</y>
+      <width>141</width>
+      <height>390</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Flower 1</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>174</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Flower 2</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="button_starfish">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>201</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Starfish</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="button_ellipse">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>228</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Eclipse</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="button_circle">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>255</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Circle</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="button_fancy">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>282</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Fancy</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_scale">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>333</y>
-      <width>25</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Scale</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="spin_scale">
-    <property name="geometry">
-     <rect>
-      <x>441</x>
-      <y>333</y>
-      <width>55</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="decimals">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <double>150.000000000000000</double>
-    </property>
-    <property name="singleStep">
-     <double>0.100000000000000</double>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>406</y>
-      <width>54</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Step Count</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="spin_step_count">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>386</y>
-      <width>39</width>
-      <height>23</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="spin_interval">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>350</y>
-      <width>55</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="decimals">
-     <number>2</number>
-    </property>
-    <property name="singleStep">
-     <double>0.100000000000000</double>
-    </property>
-    <property name="stepType">
-     <enum>QAbstractSpinBox::DefaultStepType</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_interval">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>370</y>
-      <width>74</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Interval Length</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="button_astroid">
+         <property name="text">
+          <string>Astroid</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_cycloid">
+         <property name="text">
+          <string>Cycloid</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_huygens_cycloid">
+         <property name="text">
+          <string>Huygens Cycloid</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_hypo_cycloid">
+         <property name="text">
+          <string>Hypo Cycloid</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_line">
+         <property name="text">
+          <string>Line</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_circle">
+         <property name="text">
+          <string>Circle</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_ellipse">
+         <property name="text">
+          <string>Eclipse</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_starfish">
+         <property name="text">
+          <string>Starfish</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_fancy">
+         <property name="text">
+          <string>Fancy</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="button_cloud">
+         <property name="text">
+          <string>Cloud</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_inverted_cloud">
+       <property name="text">
+        <string>Inverted Cloud</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_scale">
+           <property name="text">
+            <string>Scale</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="spin_scale">
+           <property name="decimals">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <double>150.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_interval">
+           <property name="text">
+            <string>Interval Length</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="spin_interval">
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="stepType">
+            <enum>QAbstractSpinBox::DefaultStepType</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Step Count</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spin_step_count"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

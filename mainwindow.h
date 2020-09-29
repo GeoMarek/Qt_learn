@@ -40,6 +40,10 @@ private slots:
 
     void on_button_starfish_clicked();
 
+    void on_button_cloud_clicked();
+
+    void on_button_inverted_cloud_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
